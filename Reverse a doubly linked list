@@ -1,0 +1,33 @@
+/*
+  Insert Node at the end of a linked list 
+  head pointer input could be NULL as well for empty list
+  Node is defined as 
+  class Node {
+     int data;
+     Node next;
+     Node prev;
+  }
+*/
+
+Node Reverse(Node head) {
+    Node pre = null ;
+    Node current = head ;
+    Node next = current.next ;
+    if (head == null)
+    {
+        return head ;
+    }
+    else 
+    {
+    while (current != null)
+    {
+        next = current.next; 
+        current.next = pre ;
+        pre = current;
+        current = next;
+    }
+        head = pre ;
+        
+    }
+    return pre ;
+}
